@@ -9,7 +9,7 @@ namespace JuniCancela {
     * @param pin Which pin the motor is on
     */
     //% blockId=spin_one_way weight=100
-    //% block="Rodar para a direita no pin %pin"
+    //% block="Rodar para a esquerda no pin %pin"
     export function spin_one_way(pin = AnalogPin.P1): void {
         pins.servoWritePin(pin, 180)
     }
@@ -19,7 +19,7 @@ namespace JuniCancela {
     * @param pin Which pin the motor is on
     */
     //% blockId=spin_other_way weight=80
-    //% block="Rodar para a esquerda no pin %pin"
+    //% block="Rodar para a direita no pin %pin"
     export function spin_other_way(pin = AnalogPin.P2): void {
         pins.servoWritePin(pin, 0)
     }
@@ -30,7 +30,7 @@ namespace JuniCancela {
     * @param speed Speed from 0 to 100
     */
     //% blockId=spin_one_way_with_speed weight=60
-    //% block="Rodar para a direita no pin %pin | com a velocidade %speed"
+    //% block="Rodar para a esquerda no pin %pin | com a velocidade %speed"
     //% speed.min=0 speed.max=100
     export function spin_one_way_with_speed(pin = AnalogPin.P1, speed = 50): void {
         let spin = (speed * 90) / 100 + 90
@@ -43,7 +43,7 @@ namespace JuniCancela {
     * @param speed Speed from 0 to 100
     */
     //% blockId=spin_other_way_with_speed weight=40
-    //% block="Rodar para a esquerda no pin %pin | com a velocidade %speed"
+    //% block="Rodar para a direita no pin %pin | com a velocidade %speed"
     //% speed.min=0 speed.max=100
     export function spin_other_way_with_speed(pin = AnalogPin.P2, speed = 50): void {
         let spin = 90 - (speed * 90) / 100
