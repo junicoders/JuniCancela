@@ -1,7 +1,7 @@
 /**
  * Custom blocks
  */
-//% color=#2b569b weight=10 icon="\f018"
+//% color="#13C2D1" icon="\uf018"
 namespace JuniCancela {
 
     /**
