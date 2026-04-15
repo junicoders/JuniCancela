@@ -1,3 +1,64 @@
-basic.forever(function () {
-	
-})
+/**
+ * Custom blocks
+ */
+//% color=#2b569b weight=10 icon="\f018"
+namespace JuniCancela {
+
+    /**
+    * Spins the motor in one direction at full speed
+    * @param pin Which pin the motor is on
+    */
+    //% blockId=spin_one_way weight=100
+    //% block="Rodar para a direita no pin %pin"
+    export function spin_one_way(pin = AnalogPin.P1): void {
+        pins.servoWritePin(pin, 180)
+    }
+
+    /**
+    * Spins the motor in other direction at full speed
+    * @param pin Which pin the motor is on
+    */
+    //% blockId=spin_other_way weight=80
+    //% block="Rodar para a esquerda no pin %pin"
+    export function spin_other_way(pin = AnalogPin.P2): void {
+        pins.servoWritePin(pin, 0)
+    }
+
+    /**
+    * Spins the motor in one direction, with a speed from 0 to 100
+    * @param pin Which pin the motor is on
+    * @param speed Speed from 0 to 100
+    */
+    //% blockId=spin_one_way_with_speed weight=60
+    //% block="Rodar para a direita no pin %pin | com a velocidade %speed"
+    //% speed.min=0 speed.max=100
+    export function spin_one_way_with_speed(pin = AnalogPin.P1, speed = 50): void {
+        let spin = (speed * 90) / 100 + 90
+        pins.servoWritePin(pin, spin)
+    }
+
+    /**
+    * Spins the motor in the other direction, with a speed from 0 to 100
+    * @param pin Which pin the motor is on
+    * @param speed Speed from 0 to 100
+    */
+    //% blockId=spin_other_way_with_speed weight=40
+    //% block="Rodar para a esquerda no pin %pin | com a velocidade %speed"
+    //% speed.min=0 speed.max=100
+    export function spin_other_way_with_speed(pin = AnalogPin.P2, speed = 50): void {
+        let spin = 90 - (speed * 90) / 100
+        pins.servoWritePin(pin, spin)
+    }
+
+    /**
+    * Turns off the motor at this pin
+    * @param pin Which pin the motor is on
+    */
+    //% blockId=turn_off_motor weight=20
+    //% block="Desligar o motor no pin %pin"
+    export function turn_off_motor(pin = DigitalPin.P1): void {
+        pins.digitalWritePin(pin, 0)
+    }
+
+
+}
