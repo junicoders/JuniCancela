@@ -2,7 +2,7 @@
  * Custom blocks
  */
 //% color="#13C2D1" icon="\uf018"
-namespace JuniCancela {
+namespace JuniServo {
 
     /**
     * Spins the motor in one direction at full speed
